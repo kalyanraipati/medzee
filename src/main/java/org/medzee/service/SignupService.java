@@ -1,7 +1,10 @@
 package org.medzee.service;
 
 import org.medzee.model.input.SignupInputModel;
+import org.medzee.model.output.SignupResponse;
 
 public interface SignupService {
-    void signup(SignupInputModel inputModel);
+    SignupResponse signup(SignupInputModel inputModel);
+
+    SignupResponse authenticate(SignupInputModel inputModel);
 }

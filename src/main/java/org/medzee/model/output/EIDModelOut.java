@@ -15,5 +15,7 @@ public class EIDModelOut {
     String lastName;
     int age;
     String gender;
+    String expiryDate;
+    String dob;
 
 }

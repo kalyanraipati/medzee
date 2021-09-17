@@ -1,6 +1,8 @@
 package org.medzee.service.impl;
 
+import org.medzee.entity.EIDEntity;
 import org.medzee.mapper.EidMapper;
+import org.medzee.model.input.EIDAInputModel;
 import org.medzee.model.output.EIDModelOut;
 import org.medzee.repository.EidTpRepository;
 import org.medzee.service.EidService;
@@ -17,6 +19,10 @@ public class EidServiceImpl implements EidService {
 
     public Mono<EIDModelOut> getEidById(String id) {
          return eidTpRepository.findById(id).map(EidMapper::from);
+    }
+
+    public void postEIDA(EIDAInputModel eidaInputModel) {
+        eidTpRepository.save(EidMapper.getEntity(eidaInputModel)).block();
     }
 }
 

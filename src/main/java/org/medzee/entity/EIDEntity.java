@@ -16,4 +16,6 @@ public class EIDEntity extends BaseEntity {
     String lastName;
     int age;
     String gender;
+    String expiryDate;
+    String dob;
 }

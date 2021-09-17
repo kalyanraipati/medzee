@@ -13,7 +13,7 @@ public class UserMapper {
     }
     public static UserModelOut from(UserEntity entity){
         UserModelOut modelOut=new UserModelOut();
-        modelOut.setEId(entity.getEid());
+        modelOut.setEId(entity.getIdentityNumber());
         modelOut.setId(entity.getId());
         modelOut.setAge(entity.getAge());
         modelOut.setGender(entity.getGender());
