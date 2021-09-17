@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class SignupInputModel {
-    private String eid;
+    private String identityNumber;
     private char[] password;
     private UserRoutineInputModel userRoutine;
 }

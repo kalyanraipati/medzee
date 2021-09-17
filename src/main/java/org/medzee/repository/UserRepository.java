@@ -8,5 +8,8 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface UserRepository extends ReactiveCrudRepository<UserEntity, String> {
-    Mono<Boolean> existsByEid(String eid);
+    Mono<Boolean> existsByIdentityNumber(String eid);
+    Mono<UserEntity> findByIdentityNumber(String identityNumber);
+    Mono<UserEntity> findById(String id);
+    Mono<Boolean> existsById(String id);
 }

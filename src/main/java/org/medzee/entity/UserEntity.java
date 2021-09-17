@@ -13,7 +13,7 @@ public class UserEntity extends BaseEntity {
     @Transient
     public static final String SEQUENCE_NAME = "users_sequence";
 
-    private String eid;
+    private String identityNumber;
     private String passwordHash;
     private String firstName;
     private String middleName;
