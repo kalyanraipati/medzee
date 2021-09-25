@@ -90,8 +90,11 @@ public class UserServiceImpl implements UserService {
         if (!userExists) {
             throw new NotFoundException("User is not registered");
         }
-        RoutineEntity entity = new RoutineEntity();
-        entity.setRegistrationId(registrationId);
+        RoutineEntity entity = routineRepository.findByRegistrationId(registrationId).block();
+        if (ObjectUtils.isEmpty(entity)) {
+            entity = new RoutineEntity();
+            entity.setRegistrationId(registrationId);
+        }
         entity.setTimings(routineInfo.getTimings());
         routineRepository.save(entity).block();
     }

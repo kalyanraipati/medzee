@@ -30,11 +30,11 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @PostMapping("/{id}/info")
+    @PatchMapping("/{id}/info")
     public ResponseEntity saveRoutineInfo(@PathVariable("id") String id,
                                           @RequestBody UserRoutineInputModel userRoutineInputModel) {
         userService.saveRoutineInfo(id, userRoutineInputModel);
-        return new ResponseEntity(HttpStatus.CREATED);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping("/{id}/visits-info")
