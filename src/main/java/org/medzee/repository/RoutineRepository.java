@@ -9,4 +9,5 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface RoutineRepository extends ReactiveCrudRepository<RoutineEntity, String> {
 
+    Mono<RoutineEntity> findByRegistrationId(String registrationId);
 }
